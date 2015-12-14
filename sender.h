@@ -9,17 +9,18 @@
 
 class Sender : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-Sender();
-void sendvalue(float x);
-void sendchar(QString s);
+    Sender();
+    void sendvalue(float x);
+    void sendchar(QString s);
+    void writedata();
 private slots:
-void broadcastLine();
+    //void broadcastLine();
 private:
-QUdpSocket *socket;
-float value;
-QString character;
+    QUdpSocket *socket;
+    float value;
+    QString character;
 };
 
 #endif // SENDER_H

@@ -30,10 +30,12 @@ void MainWindow::incr()
     x++;
     sender->sendchar(y);
     sender->sendvalue(x);
+    sender->writedata();
 }
 
 void MainWindow::axismovedS(QString s, float f)
 {
     sender->sendchar(s);
     sender->sendvalue(f);
+    sender->writedata();
 }

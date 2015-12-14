@@ -34,6 +34,8 @@ joysticksdl::joysticksdl(unsigned int joystickNumber, QObject *parent) : QObject
     for (int i = 0; i < SDL_JoystickNumButtons(joy); i++)
         buttonKinds[i] = 0;
 
+    emit axismoved("0",10.1);
+
 
 }
 
@@ -119,12 +121,28 @@ void joysticksdl::AxisMotion(SDL_Event event)
     {
         if( event.jaxis.axis == 0) /*0 for Left or Right*/
         {
-            emit axismoved("axis 0",event.jaxis.value);
+            emit axismoved(QString("x"),event.jaxis.value);
         }
 
         if( event.jaxis.axis == 1) /*1 for Up and Down*/
         {
-            emit axismoved("axis 1",event.jaxis.value);
+            emit axismoved("y",event.jaxis.value);
+        }
+        if( event.jaxis.axis == 2)
+        {
+            emit axismoved("u",event.jaxis.value);
+        }
+        if( event.jaxis.axis == 3)
+        {
+            emit axismoved("p",event.jaxis.value);
+        }
+        if( event.jaxis.axis == 4)
+        {
+            emit axismoved("p",event.jaxis.value);
+        }
+        if( event.jaxis.axis == 5)
+        {
+            emit axismoved("p",event.jaxis.value);
         }
     }
 }
@@ -141,40 +159,40 @@ void joysticksdl::HatMotion(SDL_Event event)
 {
     if ( event.jhat.value & SDL_HAT_UP )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
 
     if ( event.jhat.value & SDL_HAT_DOWN )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_LEFT )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_RIGHT )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_CENTERED )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_LEFTDOWN )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_LEFTUP )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_RIGHTDOWN )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
     if ( event.jhat.value & SDL_HAT_RIGHTUP )
     {
-        emit axismoved("axis 2",event.jhat.value);
+        emit axismoved("z",event.jhat.value);
     }
 }
 
