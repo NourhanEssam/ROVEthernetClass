@@ -12,13 +12,13 @@ class Sender : public QObject
 Q_OBJECT
 public:
 Sender();
-void sendvalue(qint16 x);
+void sendvalue(float x);
 void sendchar(QString s);
 private slots:
 void broadcastLine();
 private:
 QUdpSocket *socket;
-int value;
+float value;
 QString character;
 };
 

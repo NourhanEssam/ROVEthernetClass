@@ -16,7 +16,7 @@ QByteArray buffer( socket->pendingDatagramSize(), 0 );
 socket->readDatagram( buffer.data(), buffer.size() );
 QDataStream stream( buffer );
 stream.setVersion( QDataStream::Qt_4_0 );
-quint16 y;
+float y;
 QString str;
 stream>> str >>y;
 qDebug()<<"Sent data"<<str<<y;

@@ -23,7 +23,7 @@ private:
     Ui::MainWindow *ui;
     Sender *sender;
     Listener *list;
-    qint16 x;
+    float x;
     QTimer *t;
     QString y;
 

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     sender = new Sender();
     list = new Listener();
-    x = 15;
+    x = 15.555;
     y = "empty";
     sender->sendvalue(x);
     t = new QTimer();
