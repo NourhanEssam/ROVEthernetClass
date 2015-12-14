@@ -9,7 +9,6 @@ connect( socket, SIGNAL(readyRead()), this, SLOT(dataPending()) );
 }
 void Listener::dataPending()
 {
-    qDebug()<<"data pending";
 while( socket->hasPendingDatagrams() )
 {
 QByteArray buffer( socket->pendingDatagramSize(), 0 );
@@ -19,6 +18,6 @@ stream.setVersion( QDataStream::Qt_4_0 );
 float y;
 QString str;
 stream>> str >>y;
-qDebug()<<"Sent data"<<str<<y;
+qDebug()<<"Sent data"<< str <<y;
 }
 }

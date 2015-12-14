@@ -15,13 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     listener.cpp \
-    sender.cpp
+    sender.cpp \
+    joystick.cpp
 
 HEADERS  += mainwindow.h \
     listener.h \
-    sender.h
+    sender.h \
+    joystick.h
 
 FORMS    += mainwindow.ui
 
 
 QT += network
+
+LIBS += -LC:/Users/Esam/Downloads/SDL-devel-1.2.15-mingw32/SDL-1.2.15/lib -lSDL
+INCLUDEPATH += C:/Users/Esam/Downloads/SDL-devel-1.2.15-mingw32/SDL-1.2.15/include/SDL
