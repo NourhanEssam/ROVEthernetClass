@@ -25,6 +25,7 @@ private:
     Listener *list;
     qint16 x;
     QTimer *t;
+    QString y;
 
 private slots:
     void incr();

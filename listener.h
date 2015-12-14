@@ -15,7 +15,6 @@ private slots:
 void dataPending();
 private:
 QUdpSocket *socket;
-//QImage *image;
 };
 
 #endif // LISTENER_H

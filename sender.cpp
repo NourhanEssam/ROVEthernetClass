@@ -14,14 +14,20 @@ void Sender::broadcastLine()
 QByteArray buffer( 50, 0 );
 QDataStream stream( &buffer, QIODevice::WriteOnly );
 stream.setVersion( QDataStream::Qt_4_0 );
-//quint16 y = qrand() % 100;
 quint16 y = value;
-stream << y;
+QString z;
+stream << z<<y;
 socket->writeDatagram( buffer, QHostAddress::Broadcast, 9988 );
 }
 
 void Sender::sendvalue(qint16 x)
 {
     value = x;
-    qDebug()<<value;
+    qDebug()<< "Value sent" <<value;
+}
+
+void Sender::sendchar(QString s)
+{
+    character = s;
+    qDebug()<< "character sent" <<character;
 }

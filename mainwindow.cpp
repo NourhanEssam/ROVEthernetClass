@@ -6,12 +6,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    Sender sender;
-//    Listener list;
     sender = new Sender();
     list = new Listener();
-    //qint16 x;
     x = 15;
+    y = "empty";
     sender->sendvalue(x);
     t = new QTimer();
     t->start(30);
@@ -26,5 +24,6 @@ MainWindow::~MainWindow()
 void MainWindow::incr()
 {
     x++;
+    sender->sendchar(y);
     sender->sendvalue(x);
 }
