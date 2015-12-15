@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     x = 15.555;
     y = "empty";
     sender->sendvalue(x);
+    sender->sendchar(y);
+    sender->writedata();
     t = new QTimer();
     t->start(30);
     //connect(t,SIGNAL(timeout()),this,SLOT(incr()));

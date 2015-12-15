@@ -117,11 +117,12 @@ void joysticksdl::ButtonUp(SDL_Event event)
 
 void joysticksdl::AxisMotion(SDL_Event event)
 {
-    if ( ( event.jaxis.value < -3200 ) || (event.jaxis.value > 3200 ) )
-    {
+    //if ( ( event.jaxis.value < -100 ) || (event.jaxis.value > 100 ) )
+    //{
         if( event.jaxis.axis == 0) /*0 for Left or Right*/
         {
             emit axismoved(QString("x"),event.jaxis.value);
+            qDebug()<<event.jaxis.value;
         }
 
         if( event.jaxis.axis == 1) /*1 for Up and Down*/
@@ -144,7 +145,7 @@ void joysticksdl::AxisMotion(SDL_Event event)
         {
             emit axismoved("p",event.jaxis.value);
         }
-    }
+    //}
 }
 
 void joysticksdl::BallMotion(SDL_Event event)
