@@ -15,8 +15,6 @@ public:
     void sendvalue(float x);
     void sendchar(QString s);
     void writedata();
-private slots:
-    //void broadcastLine();
 private:
     QUdpSocket *socket;
     float value;

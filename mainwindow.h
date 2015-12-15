@@ -25,12 +25,10 @@ private:
     Sender *sender;
     Listener *list;
     float x;
-    QTimer *t;
     QString y;
     joysticksdl *joystick;
 
 private slots:
-    void incr();
     void axismovedS(QString s, float f);
 };
 

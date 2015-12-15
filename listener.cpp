@@ -12,13 +12,6 @@ void Listener::dataPending()
         QByteArray buffer( socket->pendingDatagramSize(), 0 );
         buffer.resize(socket->pendingDatagramSize());
         socket->readDatagram( buffer.data(), buffer.size() );
-//        QDataStream stream( buffer );
-//        stream.setVersion( QDataStream::Qt_4_0 );
-//        QString str;
-//        float y;
-//        qDebug()<<"size2"<<(quint32)buffer.data()<<buffer.size();
-        //stream >> str >> y;
-        qDebug()<<buffer;
-        //qDebug()<<"Sent data"<< str <<y;
+        qDebug()<<"Received data: "<<buffer;
     }
 }
